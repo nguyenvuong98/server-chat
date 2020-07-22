@@ -2,9 +2,10 @@ var express = require('express');
 var app = express();
 var moment = require('moment');
 var server = require('http').createServer(app);
+var port = 3000 || process.env.PORT;
 //var io = require('socket.io')(server);
 var io = require('socket.io', { rememberTransport: false, transports: ['WebSocket', 'Flash Socket', 'AJAX long-polling'] }).listen(server);
-server.listen(3000 ,() => {
+server.listen(port ,() => {
     console.log('Server is running port 3000');
 })
 
